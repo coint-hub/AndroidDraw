@@ -12,13 +12,15 @@ import java.util.LinkedHashMap
 class DrawView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
-    private var mPaths = LinkedHashMap<MyPath, PaintOptions>()
+    var mPaths = LinkedHashMap<MyPath, PaintOptions>()
+        private set
 
     private var mLastPaths = LinkedHashMap<MyPath, PaintOptions>()
     private var mUndonePaths = LinkedHashMap<MyPath, PaintOptions>()
 
     private var mPaint = Paint()
-    private var mPath = MyPath()
+    var mPath = MyPath()
+        private set
     private var mPaintOptions = PaintOptions()
 
     private var mCurX = 0f
